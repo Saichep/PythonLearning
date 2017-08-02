@@ -27,7 +27,8 @@ def calculate_plane_cost(city_code: int):
 
 def trip_cost(city_code: int, days: int, expenditure: int):
     """Returns total trip cost"""
-    return calculate_car_cost(days) + calculate_hotel_cost(city_code, days) + calculate_plane_cost(city_code) + expenditure
+    return calculate_car_cost(days) + calculate_hotel_cost(city_code, days)\
+           + calculate_plane_cost(city_code) + expenditure
 
 
 def print_cities():
@@ -46,7 +47,8 @@ if 1 <= chosen_city_code <= len(list_of_cities):
     days = int(input("Enter Number of days: "))
     if days > 0:
         trip_additional_expense = int(input("Enter your estimated expenditure: "))
-        print("\nTotal Trip Cost to \'%s\' for \'%d\' days = $ %f" %(list_of_cities[chosen_city_code], days, trip_cost(chosen_city_code, days, trip_additional_expense)))
+        print("\nTotal Trip Cost to \'%s\' for \'%d\' days = $ %f"
+              %(list_of_cities[chosen_city_code], days, trip_cost(chosen_city_code, days, trip_additional_expense)))
     else:
         print("Invalid number of days. Try again !!")
 else:
