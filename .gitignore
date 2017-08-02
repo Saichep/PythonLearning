@@ -150,5 +150,4 @@ ENV/
 # mypy
 .mypy_cache/
 
-.gitignore
 .idea/workspace.xml
