@@ -40,24 +40,41 @@ def count_eggs():
 
 
 def biggest_number(*args):
-    integer_type = type(0)
     valid = True
     for arg in args:
-        if type(arg) != integer_type:
+        if not isinstance(arg, int):
             valid = False
-            print("Failed for " + arg)
             break
     if valid:
         return max(args)
     else:
         return "Wrong arguments !!"
 
+
 def smallest_number(*args):
-    return min(args)
+    valid = True
+    for arg in args:
+        if not isinstance(arg, int):
+            valid = False
+            break
+    if valid:
+        return min(args)
+    else:
+        return "Wrong arguments !!"
 
 
 def distance_from_zero(arg):
-    return abs(arg)
+    if isinstance(arg, int) or isinstance(arg, float):
+        return abs(arg)
+    else:
+        return "Wrong arguments !!"
+
+
+def distance_from_zero_again(arg):
+    if isinstance(arg, int) or isinstance(arg, float):
+        return abs(arg)
+    else:
+        return "Wrong arguments !!"
 
 
 def learn_math_operations():
@@ -76,6 +93,7 @@ def learn_math_operations():
     print("Biggest Number is =", biggest_number(-10, -5, 5, 10))
     print("Smallest Number is =", smallest_number(-10, -5, 5, 10))
     print("Distance from Zero is =",distance_from_zero(-10))
+    print("Distance from Zero again is =",distance_from_zero_again(4))
 
 
 def restaurant_bill_calculator(meal_cost: float, tax_percentage: float, tip_percentage: float, currency: str):
