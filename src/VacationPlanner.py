@@ -33,7 +33,7 @@ def trip_cost(city_code: int, days: int, expenditure: int):
 def print_cities():
     index = 0
     city_iterator = iter(list_of_cities)
-    print("+++---+---+---+---+---+---+---+---+++")
+    print("+++---+---+---+---+---+---+---+---+---+---+---+---+---+---+++")
     for city in city_iterator:
         index = index + 1
         print(index, ")", city)
@@ -44,7 +44,10 @@ chosen_city_code = int(input("Choose city number from above: "))
 if 1 <= chosen_city_code <= len(list_of_cities):
     chosen_city_code = chosen_city_code - 1
     days = int(input("Enter Number of days: "))
-    trip_additional_expense = int(input("Enter your estimated expenditure: "))
-    print("\nTotal Trip Cost to \'%s\' for \'%d\' days = $ %f" %(list_of_cities[chosen_city_code], days, trip_cost(chosen_city_code, days, trip_additional_expense)))
+    if days > 0:
+        trip_additional_expense = int(input("Enter your estimated expenditure: "))
+        print("\nTotal Trip Cost to \'%s\' for \'%d\' days = $ %f" %(list_of_cities[chosen_city_code], days, trip_cost(chosen_city_code, days, trip_additional_expense)))
+    else:
+        print("Invalid number of days. Try again !!")
 else:
     print("Invalid Selection of city. Try again !!")
