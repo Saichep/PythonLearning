@@ -43,10 +43,11 @@ def learn_math_operations():
     float = 0.5
     print(x, "plus", y, "=", x + y)
     print(x, "minus", y, "=", x - y)
-    print(x, "multiplied by", y, "=", x * float)
+    print(x, "multiplied by", float, "=", x * float)
     print(x, "divided by", y, "=", x / y)
     print(x, "to power of (exponential)", y, "=", x ** y)
     print(x, "modulus", y, "=", x % y)
+    print(x, "square root(", float, ")=", x ** float)
 
 
 def restaurant_bill_calculator(meal_cost, tax_percentage, tip_percentage, currency):
@@ -77,18 +78,62 @@ def play_with_strings(string_var):
     print("%s in upper case= %s" %(string_var, string_var.upper()))
 
 
+def check_string_isalpha(string_var):
+    # checks if a string is not empty and has only alphabetic characters
+    if len(string_var) > 0 and string_var.isalpha():
+        return True
+    else:
+        return False
+
+def check_isnumeric(numeric_var):
+    # checks if a string is not empty and has only alphabetic characters
+    if len(numeric_var) > 0 and numeric_var.isnumeric():
+        return True
+    else:
+        return False
+
 def ask_and_rephrase_about_me():
     name = input("What is your name? ")
     quest = input("What is your quest? ")
     color = input("What is your favorite color? ")
+    age = input("Your age? ")
 
-    print("Ah, so your name is %s, your quest is %s, " \
-          "and your favorite color is %s." % (name, quest, color))
+    if check_string_isalpha(name) and check_string_isalpha(quest) and check_string_isalpha(color) \
+            and check_isnumeric(age):
+        print("Ah, so your name is %s, your quest is %s, your favorite color is %s and your age is %s."
+              % (name, quest, color, age))
+    else:
+        print("Some Inputs are not provided in correct format. Please try again !!")
 
 def print_date_and_time_pretty_format():
     now = datetime.now()
     print('Today is %s/%s/%s' % (now.month, now.day, now.year))
     print('Time is %s:%s:%s' % (now.hour, now.minute, now.second))
+
+
+def greater_less_equal_5(answer):
+    # Switch Statement
+    response = "Dont Know"
+    if answer > 5:
+        response="Yes"
+    elif answer < 5:
+        response="No"
+    else:
+        response="Both are equal"
+    return str(answer) + ">" + str(5) + "==" + response
+
+
+def arithmetic_and_logical_operators():
+    # Operator preference of evaluation: not, and, or
+    if 2 <= 5:
+        print("Success #1")
+
+    if True and not False:
+        print("Success #2")
+
+    print (greater_less_equal_5(4))
+    print (greater_less_equal_5(5))
+    print (greater_less_equal_5(6))
 
 
 def finished_concepts():
@@ -103,3 +148,4 @@ def finished_concepts():
 
 sayHello()
 #finished_concepts()
+
