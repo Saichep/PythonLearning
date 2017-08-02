@@ -2,6 +2,8 @@
 
 from datetime import datetime
 
+from math import sqrt
+
 __author__ = "Sudheer Veeravalli <veersudhir83@gmail.com>"
 __copyright__ = "Copyright (c) 2017. Sudheer Veeravalli. Free for general use and re-distribution"
 __license__ = "Public Domain"
@@ -21,6 +23,7 @@ def multi_line_comment():
 
 
 def learn_variables():
+    """Learn about variables"""
     my_int = 7
     my_float = 1.23
     my_bool = True
@@ -30,14 +33,35 @@ def learn_variables():
     print('value of my_bool negated is =', not my_bool)
 
 
-# Indentation
 def count_eggs():
+    """Learn about return statements"""
     eggs = 12
     return eggs
 
 
-# math operations
+def biggest_number(*args):
+    integer_type = type(0)
+    valid = True
+    for arg in args:
+        if type(arg) != integer_type:
+            valid = False
+            print("Failed for " + arg)
+            break
+    if valid:
+        return max(args)
+    else:
+        return "Wrong arguments !!"
+
+def smallest_number(*args):
+    return min(args)
+
+
+def distance_from_zero(arg):
+    return abs(arg)
+
+
 def learn_math_operations():
+    """Learn about Mathematical Operations"""
     x = 10
     y = 3
     float = 0.5
@@ -48,16 +72,21 @@ def learn_math_operations():
     print(x, "to power of (exponential)", y, "=", x ** y)
     print(x, "modulus", y, "=", x % y)
     print(x, "square root(", float, ")=", x ** float)
+    print(x, "square root(using inbuilt function) = ", int(sqrt(25)))
+    print("Biggest Number is =", biggest_number(-10, -5, 5, 10))
+    print("Smallest Number is =", smallest_number(-10, -5, 5, 10))
+    print("Distance from Zero is =",distance_from_zero(-10))
 
 
-def restaurant_bill_calculator(meal_cost, tax_percentage, tip_percentage, currency):
+def restaurant_bill_calculator(meal_cost: float, tax_percentage: float, tip_percentage: float, currency: str):
+    """Calculates the bill including tax and tip"""
     subTotal = meal_cost + meal_cost * (tax_percentage / 100)
     total = subTotal + subTotal * (tip_percentage / 100)
     print("SubTotal with Tax = %.2f" % subTotal, currency)
     print("Total (including tax and tip) = %.2f" % total, currency)
 
 
-def string_index(string_var, index):
+def string_index(string_var: str, index: int):
     """
     The string "PYTHON" has six characters, numbered 0 to 5, as shown below:
     +---+---+---+---+---+---+
@@ -67,32 +96,36 @@ def string_index(string_var, index):
     So if you wanted "Y", you could just type "PYTHON"[1] (always start counting from 0!)
     """
     if index <= len(string_var):
-        print("%d'th char of %s is %s" %(index, string_var,string_var[index - 1]))
+        print("%d'th char of %s is %s" %(index, string_var,string_var[index]))
     else:
         print("Index out of range: Keep it <= %s" %len(string_var))
 
 
-def play_with_strings(string_var):
-    string_index(string_var, 7)
+def play_with_strings(string_var: str):
+    """Playing around with strings"""
+    string_index(string_var, len(string_var)-2)
     print("%s in lower case= %s" %(string_var, string_var.lower()))
     print("%s in upper case= %s" %(string_var, string_var.upper()))
+    print("Slice[0] of " + string_var + " is = " + string_var[0])
+    print("Slice[0:<stringLength>] of " + string_var + " is = " + string_var[0:len(string_var)])
 
 
-def check_string_isalpha(string_var):
-    # checks if a string is not empty and has only alphabetic characters
+def check_string_isalpha(string_var: str):
+    """Checks if a string is not empty and has only alphabetic characters"""
     if len(string_var) > 0 and string_var.isalpha():
         return True
     else:
         return False
 
-def check_isnumeric(numeric_var):
-    # checks if a string is not empty and has only alphabetic characters
+def check_isnumeric(numeric_var: str):
+    """Checks if a string is not empty and has only numbers"""
     if len(numeric_var) > 0 and numeric_var.isnumeric():
         return True
     else:
         return False
 
 def ask_and_rephrase_about_me():
+    """Take user's input based on answers to the questions and infers back the same with validations"""
     name = input("What is your name? ")
     quest = input("What is your quest? ")
     color = input("What is your favorite color? ")
@@ -106,37 +139,39 @@ def ask_and_rephrase_about_me():
         print("Some Inputs are not provided in correct format. Please try again !!")
 
 def print_date_and_time_pretty_format():
+    """Prints date and time in pretty format"""
     now = datetime.now()
     print('Today is %s/%s/%s' % (now.month, now.day, now.year))
     print('Time is %s:%s:%s' % (now.hour, now.minute, now.second))
 
 
-def greater_less_equal_5(answer):
-    # Switch Statement
+def greater_less_equal(answer: int, compare_value: int):
+    """Checks if the given number is greater, lesser or equal to given number"""
     response = "Dont Know"
-    if answer > 5:
+    if answer > compare_value:
         response="Yes"
-    elif answer < 5:
+    elif answer < compare_value:
         response="No"
     else:
         response="Both are equal"
-    return str(answer) + ">" + str(5) + "==" + response
+    return str(answer) + ">" + str(compare_value) + "==" + response
 
 
 def arithmetic_and_logical_operators():
-    # Operator preference of evaluation: not, and, or
+    """Test Case for arithmetic and logical operations"""
     if 2 <= 5:
         print("Success #1")
 
     if True and not False:
         print("Success #2")
 
-    print (greater_less_equal_5(4))
-    print (greater_less_equal_5(5))
-    print (greater_less_equal_5(6))
+    print (greater_less_equal(4,5))
+    print (greater_less_equal(5,5))
+    print (greater_less_equal(6,5))
 
 
 def finished_concepts():
+    """Contains all the concepts that I have finished learning"""
     multi_line_comment()
     print('count of eggs is = %d' %(count_eggs()))
     learn_variables()
@@ -146,6 +181,8 @@ def finished_concepts():
     ask_and_rephrase_about_me()
     print_date_and_time_pretty_format()
 
+
 sayHello()
 #finished_concepts()
 
+learn_math_operations()
