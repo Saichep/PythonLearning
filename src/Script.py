@@ -64,14 +64,14 @@ def smallest_number(*args):
 
 
 def distance_from_zero(arg):
-    if isinstance(arg, int) or isinstance(arg, float):
+    if type(arg) == int or type(arg) == float:
         return abs(arg)
     else:
         return "Wrong arguments !!"
 
 
 def distance_from_zero_again(arg):
-    if isinstance(arg, int) or isinstance(arg, float):
+    if type(arg) == int or type(arg) == float:
         return abs(arg)
     else:
         return "Wrong arguments !!"
