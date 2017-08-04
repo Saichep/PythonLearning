@@ -40,16 +40,29 @@ def print_cities():
         print(index, ")", city)
 
 
-print_cities()
-chosen_city_code = int(input("Choose city number from above: "))
-if 1 <= chosen_city_code <= len(list_of_cities):
-    chosen_city_code = chosen_city_code - 1
-    days = int(input("Enter Number of days: "))
-    if days > 0:
-        trip_additional_expense = int(input("Enter your estimated expenditure: "))
-        print("\nTotal Trip Cost to \'%s\' for \'%d\' days = $ %f"
-              %(list_of_cities[chosen_city_code], days, trip_cost(chosen_city_code, days, trip_additional_expense)))
+def start_continue_program():
+    print_cities()
+    chosen_city_code = int(input("Choose city number from above: "))
+    if 1 <= chosen_city_code <= len(list_of_cities):
+        chosen_city_code = chosen_city_code - 1
+        days = int(input("Enter Number of days: "))
+        if days > 0:
+            trip_additional_expense = int(input("Enter your estimated expenditure: "))
+            print("\nTotal Trip Cost to \'%s\' for \'%d\' days = $ %f"
+                  %(list_of_cities[chosen_city_code], days, trip_cost(chosen_city_code, days, trip_additional_expense)))
+            redo = int(input("\nDo you want to calculate again (y/n)?: "))
+            redo = str(redo).upper()
+            if (redo == "Y" or redo == "YES"):
+                start_continue_program()
+            elif (redo == "N" or redo == "NO"):
+                exit(0)
+            else:
+                print("Invalid Option !! Good Bye !!")
+                exit(0)
+        else:
+            print("Invalid number of days. Try again !!")
     else:
-        print("Invalid number of days. Try again !!")
-else:
-    print("Invalid Selection of city. Try again !!")
+        print("Invalid Selection of city. Try again !!")
+
+
+start_continue_program()
