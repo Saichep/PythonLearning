@@ -1,6 +1,6 @@
-list_of_cities = ["Charlotte", "Tampa", "Pittsburgh", "Los Angeles"];
-plane_costs = [1183, 1220, 2222, 3475];
-hotel_costs_per_night = [140, 240, 200, 475];
+list_of_cities = ["Charlotte", "Tampa", "Pittsburgh", "Los Angeles"]
+plane_costs = [1183, 1220, 2222, 3475]
+hotel_costs_per_night = [140, 240, 200, 475]
 
 def calculate_hotel_cost(city_code: int, days: int):
     """Returns hotel cost for the selected city and days"""
@@ -40,6 +40,16 @@ def print_cities():
         print(index, ")", city)
 
 
+def retry_again():
+    redo = input("\nDo you want to calculate again (y/n)?: ")
+    redo = str(redo).upper()
+    if redo == "Y" or redo == "YES":
+        start_continue_program()
+    else:
+        print("Happy to serve you.. Bye !!")
+        exit(0)
+
+
 def start_continue_program():
     print_cities()
     chosen_city_code = int(input("Choose city number from above: "))
@@ -50,19 +60,13 @@ def start_continue_program():
             trip_additional_expense = int(input("Enter your estimated expenditure: "))
             print("\nTotal Trip Cost to \'%s\' for \'%d\' days = $ %f"
                   %(list_of_cities[chosen_city_code], days, trip_cost(chosen_city_code, days, trip_additional_expense)))
-            redo = int(input("\nDo you want to calculate again (y/n)?: "))
-            redo = str(redo).upper()
-            if (redo == "Y" or redo == "YES"):
-                start_continue_program()
-            elif (redo == "N" or redo == "NO"):
-                exit(0)
-            else:
-                print("Invalid Option !! Good Bye !!")
-                exit(0)
+            retry_again()
         else:
-            print("Invalid number of days. Try again !!")
+            print("Invalid number of days !!")
+            retry_again()
     else:
-        print("Invalid Selection of city. Try again !!")
+        print("Invalid Selection of city !!")
+        retry_again()
 
 
 start_continue_program()
