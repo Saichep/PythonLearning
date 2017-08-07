@@ -216,6 +216,36 @@ def slicing_test():
     print(slicing_strings_lists(list_items, 4, None))
 
 
+def list_operations():
+    input_list = [5, 3, 1, 2, 4]
+    square_list = []
+    for number in input_list:
+        square_list.append(number ** 2)
+    square_list.sort()
+    print(square_list)
+
+
+def play_with_dictionaries():
+    # Assigning a dictionary with three key-value pairs to residents:
+    residents = {'Puffin' : 104, 'Sloth' : 105, 'Burmese Python' : 106}
+    print(residents['Puffin'])
+    print(residents['Sloth'])
+    print(residents['Burmese Python'])
+
+    inventory = {'gold': 500, 'pouch': ['flint', 'twine', 'gemstone'],
+                 'backpack': ['xylophone', 'dagger', 'bedroll', 'bread loaf'],
+                 'burlap bag': ['apple', 'small ruby', 'three-toed sloth']}
+
+    # Sorting the list found under the key 'pouch'
+    inventory['pouch'].sort()
+
+    inventory['pocket'] = ['seashell', 'strange berry', 'lint']
+    inventory['backpack'].sort()
+    inventory['backpack'].remove('dagger')
+    inventory['gold'] += 50
+    print(inventory)
+
+
 def finished_concepts():
     """Contains all the concepts that I have finished learning"""
     multi_line_comment()
@@ -227,9 +257,9 @@ def finished_concepts():
     ask_and_rephrase_about_me()
     print_date_and_time_pretty_format()
     slicing_test()
+    list_operations()
+    play_with_dictionaries()
 
 
 sayHello()
 #finished_concepts()
-
-
