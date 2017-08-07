@@ -92,8 +92,8 @@ def learn_math_operations():
     print(x, "square root(using inbuilt function) = ", int(sqrt(25)))
     print("Biggest Number is =", biggest_number(-10, -5, 5, 10))
     print("Smallest Number is =", smallest_number(-10, -5, 5, 10))
-    print("Distance from Zero is =",distance_from_zero(-10))
-    print("Distance from Zero again is =",distance_from_zero_again(4))
+    print("Distance between -10 and Zero is =",distance_from_zero(-10))
+    print("Distance between 4 and Zero again is =",distance_from_zero_again(4))
 
 
 def restaurant_bill_calculator(meal_cost: float, tax_percentage: float, tip_percentage: float, currency: str):
@@ -135,12 +135,14 @@ def check_string_isalpha(string_var: str):
     else:
         return False
 
+
 def check_isnumeric(numeric_var: str):
     """Checks if a string is not empty and has only numbers"""
     if len(numeric_var) > 0 and numeric_var.isnumeric():
         return True
     else:
         return False
+
 
 def ask_and_rephrase_about_me():
     """Take user's input based on answers to the questions and infers back the same with validations"""
@@ -155,6 +157,7 @@ def ask_and_rephrase_about_me():
               % (name, quest, color, age))
     else:
         print("Some Inputs are not provided in correct format. Please try again !!")
+
 
 def print_date_and_time_pretty_format():
     """Prints date and time in pretty format"""
@@ -188,6 +191,31 @@ def arithmetic_and_logical_operators():
     print (greater_less_equal(6,5))
 
 
+def slicing_lists(input_list: list, start_index: int, end_index: int):
+    """Slicing of lists"""
+
+
+def slicing_strings_lists(input_object, start_index: int, end_index: int):
+    """Slices a given string or list"""
+    if start_index is None:
+        start_index = 0
+    if end_index is None:
+        end_index = len(input_object)
+    return input_object[start_index:end_index]
+
+
+def slicing_test():
+    string_test = "catdogfrog"
+    print("dog=", slicing_strings_lists(string_test, 3, 6))
+    print("cat=", slicing_strings_lists(string_test, None , 3))
+    print("frog=", slicing_strings_lists(string_test, 6, None))
+
+    list_items = ["sunglasses", "hat", "passport", "laptop", "suit", "shoes"]
+    print(slicing_strings_lists(list_items, 3, 6))
+    print(slicing_strings_lists(list_items, None , 3))
+    print(slicing_strings_lists(list_items, 4, None))
+
+
 def finished_concepts():
     """Contains all the concepts that I have finished learning"""
     multi_line_comment()
@@ -198,9 +226,10 @@ def finished_concepts():
     play_with_strings("Hello Python!")
     ask_and_rephrase_about_me()
     print_date_and_time_pretty_format()
+    slicing_test()
 
 
 sayHello()
 #finished_concepts()
 
-learn_math_operations()
+
