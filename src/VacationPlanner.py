@@ -58,8 +58,8 @@ def start_continue_program():
         days = int(input("Enter Number of days: "))
         if days > 0:
             trip_additional_expense = int(input("Enter your estimated expenditure: "))
-            print("\nTotal Trip Cost to \'%s\' for \'%d\' days = $ %f"
-                  %(list_of_cities[chosen_city_code], days, trip_cost(chosen_city_code, days, trip_additional_expense)))
+            print("\nTotal Trip Cost to \'%s\' for \'%d\' days(including \'$%d\' additional expense) = $ %f"
+                  %(list_of_cities[chosen_city_code], days, trip_additional_expense, trip_cost(chosen_city_code, days, trip_additional_expense)))
             retry_again()
         else:
             print("Invalid number of days !!")
