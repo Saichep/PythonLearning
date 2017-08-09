@@ -12,6 +12,7 @@ __version__ = "1.0"
 
 def sayHello():
     print('Welcome to Python!')
+    print('')
 
 
 def multi_line_comment():
@@ -285,23 +286,6 @@ def loop_through_collections():
 
     print("Occurrence of \"fizz\" = ", fizz_count(["fizz","cat","fizz"]))
 
-    prices = {
-        "banana": 4,
-        "apple": 2,
-        "orange": 1.5,
-        "pear": 3 }
-
-    stock = {
-        "banana": 6,
-        "apple": 0,
-        "orange": 32,
-        "pear": 15 }
-
-    for key in prices:
-        print(key)
-        print("price: %s" % prices[key])
-        print("stock: %s" % stock[key])
-
 
 def finished_concepts():
     """Contains all the concepts that I have finished learning"""
@@ -316,8 +300,9 @@ def finished_concepts():
     slicing_test()
     list_operations()
     play_with_dictionaries()
+    loop_through_collections()
 
 
 sayHello()
-#finished_concepts()
-loop_through_collections()
+# finished_concepts()
+
