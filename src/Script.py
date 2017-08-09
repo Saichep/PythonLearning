@@ -246,6 +246,63 @@ def play_with_dictionaries():
     print(inventory)
 
 
+def loop_through_collections():
+    """Looping through various collections"""
+    # lists
+    names = ["Adam","Alex","Mariah","Martine","Columbus"]
+    for name in names:
+        print(name)
+
+    numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    even = []
+    odd = []
+    for val in numbers:
+        if val % 2 == 0:
+            even.append(val)
+        else:
+            odd.append(val)
+    print("Even Numbers = ", even)
+    print("Odd Numbers = ", odd)
+
+    # dictionary
+    webster = {
+        "Aardvark" : "A star of a popular children's cartoon show.",
+        "Baa" : "The sound a goat makes.",
+        "Carpet": "Goes on the floor.",
+        "Dab": "A small amount."
+    }
+    # Add your code below!
+    for key in webster:
+        print(webster[key])
+
+    # Write your function below!
+    def fizz_count(x):
+        count = 0
+        for item in x:
+            if item == "fizz":
+                count = count + 1
+        return count
+
+    print("Occurrence of \"fizz\" = ", fizz_count(["fizz","cat","fizz"]))
+
+    prices = {
+        "banana": 4,
+        "apple": 2,
+        "orange": 1.5,
+        "pear": 3 }
+
+    stock = {
+        "banana": 6,
+        "apple": 0,
+        "orange": 32,
+        "pear": 15 }
+
+    for key in prices:
+        print(key)
+        print("price: %s" % prices[key])
+        print("stock: %s" % stock[key])
+
+
 def finished_concepts():
     """Contains all the concepts that I have finished learning"""
     multi_line_comment()
@@ -263,3 +320,4 @@ def finished_concepts():
 
 sayHello()
 #finished_concepts()
+loop_through_collections()
