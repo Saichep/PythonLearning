@@ -219,11 +219,24 @@ def slicing_test():
 
 def list_operations():
     input_list = [5, 3, 1, 2, 4]
-    square_list = []
+    input_list.sort()
+    print("Input List = ", input_list)
+    squared_list = []
     for number in input_list:
-        square_list.append(number ** 2)
-    square_list.sort()
-    print(square_list)
+        squared_list.append(number ** 2)
+    squared_list.sort()
+    print("Squared List = ", squared_list)
+
+    #pop, remove and del operations
+    # list.pop(index) will remove the item at index from the list and return it to you:
+    # list.remove(item) will remove the actual item if it finds it
+    # del(list[index]) is like .pop in that it will remove the item at the given index, but it won't return it:
+    popped_item = input_list.pop(0)
+    print("Popped ", popped_item, " from ", input_list)
+    input_list.remove(input_list[0])
+    print("After remove first element in list", input_list)
+    del(input_list[len(input_list)-1])
+    print("After del(item at last index)", input_list)
 
 
 def play_with_dictionaries():
@@ -305,4 +318,4 @@ def finished_concepts():
 
 sayHello()
 # finished_concepts()
-
+list_operations()

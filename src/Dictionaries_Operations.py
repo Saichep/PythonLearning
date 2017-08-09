@@ -76,3 +76,4 @@ for student in students:
     print("Grade is %s" % get_letter_grade(int(get_weighted_average(student))))
 
 print("Class Average = ", round(get_class_average(students),2))
+print("Class Average Grade = ",get_letter_grade(get_class_average(students)))
