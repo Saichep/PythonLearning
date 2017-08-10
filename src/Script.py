@@ -6,8 +6,8 @@ __license__ = "Public Domain"
 __version__ = "1.0"
 
 from datetime import datetime
-
 from math import sqrt
+from MyMath import *
 
 def sayHello():
     print('Welcome to Python!')
@@ -95,6 +95,32 @@ def learn_math_operations():
     print("Distance between -10 and Zero is =",distance_from_zero(-10))
     print("Distance between 4 and Zero again is =",distance_from_zero_again(4))
 
+    # prints True if a number is a true integer; false otherwise
+    def is_int(x):
+        if x - round(x) == 0: # If Difference between he number and it's rounded value is Zero, then it's a true integer
+            return True
+        else:
+            return False
+
+    print(is_int(7.0))   # True
+    print(is_int(7.5))   # False
+    print(is_int(-1))    # True
+
+    def digit_sum(n):
+        result = 0
+        for digit in str(n):
+            result += int(digit)
+        return result
+
+    print(digit_sum(1234))
+
+    def factorial(x):
+        if x == 1:
+            return 1
+        else:
+            return x * factorial(x-1)
+
+    print(factorial(4))
 
 def restaurant_bill_calculator(meal_cost: float, tax_percentage: float, tip_percentage: float, currency: str):
     """Calculates the bill including tax and tip"""
@@ -356,6 +382,15 @@ def loop_through_collections():
     print("Occurrence of \"fizz\" = ", fizz_count(["fizz","cat","fizz"]))
 
 
+def test_my_math():
+    print(custom_add("a","b"))
+    print(custom_add('a','b'))
+    print(custom_add(["a"],["b"]))
+    print(custom_add([1,2,3],[4,5,6]))
+    print(custom_add(1,2))
+    print(custom_add(1.5,2.3))
+
+
 def finished_concepts():
     """Contains all the concepts that I have finished learning"""
     multi_line_comment()
@@ -370,8 +405,9 @@ def finished_concepts():
     list_operations()
     play_with_dictionaries()
     loop_through_collections()
+    test_my_math()
 
 
 sayHello()
 # finished_concepts()
-list_operations()
+test_my_math()
