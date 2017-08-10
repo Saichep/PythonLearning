@@ -1,15 +1,15 @@
 #!/usr/bin/env python
+from datetime import datetime
+from math import sqrt
+from MyMath import *
 
 __author__ = "Sudheer Veeravalli <veersudhir83@gmail.com>"
 __copyright__ = "Copyright (c) 2017. Sudheer Veeravalli. Free for general use and re-distribution"
 __license__ = "Public Domain"
 __version__ = "1.0"
 
-from datetime import datetime
-from math import sqrt
-from MyMath import *
 
-def sayHello():
+def say_hello():
     print('Welcome to Python!')
     print('')
 
@@ -81,52 +81,26 @@ def learn_math_operations():
     """Learn about Mathematical Operations"""
     x = 10
     y = 3
-    float = 0.5
+    float_val = 0.5
     print(x, "plus", y, "=", x + y)
     print(x, "minus", y, "=", x - y)
-    print(x, "multiplied by", float, "=", x * float)
+    print(x, "multiplied by", float_val, "=", x * float_val)
     print(x, "divided by", y, "=", x / y)
     print(x, "to power of (exponential)", y, "=", x ** y)
     print(x, "modulus", y, "=", x % y)
-    print(x, "square root(", float, ")=", x ** float)
+    print(x, "square root(", float_val, ")=", x ** float_val)
     print(x, "square root(using inbuilt function) = ", int(sqrt(25)))
     print("Biggest Number is =", biggest_number(-10, -5, 5, 10))
     print("Smallest Number is =", smallest_number(-10, -5, 5, 10))
-    print("Distance between -10 and Zero is =",distance_from_zero(-10))
-    print("Distance between 4 and Zero again is =",distance_from_zero_again(4))
+    print("Distance between -10 and Zero is =", distance_from_zero(-10))
+    print("Distance between 4 and Zero again is =", distance_from_zero_again(4))
 
-    # prints True if a number is a true integer; false otherwise
-    def is_int(x):
-        if x - round(x) == 0: # If Difference between he number and it's rounded value is Zero, then it's a true integer
-            return True
-        else:
-            return False
-
-    print(is_int(7.0))   # True
-    print(is_int(7.5))   # False
-    print(is_int(-1))    # True
-
-    def digit_sum(n):
-        result = 0
-        for digit in str(n):
-            result += int(digit)
-        return result
-
-    print(digit_sum(1234))
-
-    def factorial(x):
-        if x == 1:
-            return 1
-        else:
-            return x * factorial(x-1)
-
-    print(factorial(4))
 
 def restaurant_bill_calculator(meal_cost: float, tax_percentage: float, tip_percentage: float, currency: str):
     """Calculates the bill including tax and tip"""
-    subTotal = meal_cost + meal_cost * (tax_percentage / 100)
-    total = subTotal + subTotal * (tip_percentage / 100)
-    print("SubTotal with Tax = %.2f" % subTotal, currency)
+    sub_total = meal_cost + meal_cost * (tax_percentage / 100)
+    total = sub_total + sub_total * (tip_percentage / 100)
+    print("SubTotal with Tax = %.2f" % sub_total, currency)
     print("Total (including tax and tip) = %.2f" % total, currency)
 
 
@@ -140,22 +114,20 @@ def string_index(string_var: str, index: int):
     So if you wanted "Y", you could just type "PYTHON"[1] (always start counting from 0!)
     """
     if index <= len(string_var):
-        print("%d'th char of %s is %s" %(index, string_var,string_var[index]))
+        print("%d'th char of %s is %s" % (index, string_var, string_var[index]))
     else:
-        print("Index out of range: Keep it <= %s" %len(string_var))
+        print("Index out of range: Keep it <= %s" % len(string_var))
 
 
 def play_with_strings():
     """Playing around with strings"""
     string_var = "Hello Python !!"
     string_index(string_var, len(string_var)-2)
-    print("%s in lower case= %s" %(string_var, string_var.lower()))
-    print("%s in upper case= %s" %(string_var, string_var.upper()))
+    print("%s in lower case= %s" % (string_var, string_var.lower()))
+    print("%s in upper case= %s" % (string_var, string_var.upper()))
     print("Slice[0] of " + string_var + " is = " + string_var[0])
     print("Slice[0:<stringLength>] of " + string_var + " is = " + string_var[0:len(string_var)])
 
-
-    # Add your function here
     def join_strings(words):
         result = ""
         for i in words:
@@ -207,13 +179,12 @@ def print_date_and_time_pretty_format():
 
 def greater_less_equal(answer: int, compare_value: int):
     """Checks if the given number is greater, lesser or equal to given number"""
-    response = "Dont Know"
     if answer > compare_value:
-        response="Yes"
+        response = "Yes"
     elif answer < compare_value:
-        response="No"
+        response = "No"
     else:
-        response="Both are equal"
+        response = "Both are equal"
     return str(answer) + ">" + str(compare_value) + "==" + response
 
 
@@ -225,13 +196,9 @@ def arithmetic_and_logical_operators():
     if True and not False:
         print("Success #2")
 
-    print (greater_less_equal(4,5))
-    print (greater_less_equal(5,5))
-    print (greater_less_equal(6,5))
-
-
-def slicing_lists(input_list: list, start_index: int, end_index: int):
-    """Slicing of lists"""
+    print(greater_less_equal(4, 5))
+    print(greater_less_equal(5, 5))
+    print(greater_less_equal(6, 5))
 
 
 def slicing_strings_lists(input_object, start_index: int, end_index: int):
@@ -271,10 +238,10 @@ def list_operations():
     squared_list.sort()
     print("Squared List = ", squared_list)
 
-    #pop, remove and del operations
-    # list.pop(index) will remove the item at index from the list and return it to you:
-    # list.remove(item) will remove the actual item if it finds it
-    # del(list[index]) is like .pop in that it will remove the item at the given index, but it won't return it:
+    #  pop, remove and del operations
+    #  list.pop(index) will remove the item at index from the list and return it to you:
+    #  list.remove(item) will remove the actual item if it finds it
+    #  del(list[index]) is like .pop in that it will remove the item at the given index, but it won't return it:
     popped_item = input_list.pop(0)
     print("Popped ", popped_item, " from ", input_list)
     input_list.remove(input_list[0])
@@ -283,18 +250,19 @@ def list_operations():
     print("After del(item at last index)", input_list)
 
     n = [[1, 2, 3], [4, 5, 6, 7, 8, 9]]
-    # Add your function here
+
+    #  Add your function here
     def flatten(lists):
         results = []
         for numbers in lists:
-            for number in numbers:
-                results.append(number)
+            for num in numbers:
+                results.append(num)
         return results
 
     print(flatten(n))
 
-    # It's also common to need to iterate over two lists at once. This is where the built-in zip function comes in handy.
-    # zip will create pairs of elements when passed two lists, and will stop at the end of the shorter list.
+    #  When there's need to iterate over two lists at once. This is where the built-in zip function comes in handy.
+    #  zip will create pairs of elements when passed two lists, and will stop at the end of the shorter list.
     list_a = [3, 9, 17, 15, 19]
     list_b = [2, 4, 8, 10, 30, 40, 50, 60, 70, 80, 90]
 
@@ -321,9 +289,10 @@ def list_operations():
     else:
         print('A fine selection of fruits!')
 
+
 def play_with_dictionaries():
     # Assigning a dictionary with three key-value pairs to residents:
-    residents = {'Puffin' : 104, 'Sloth' : 105, 'Burmese Python' : 106}
+    residents = {'Puffin': 104, 'Sloth': 105, 'Burmese Python': 106}
     print(residents['Puffin'])
     print(residents['Sloth'])
     print(residents['Burmese Python'])
@@ -344,8 +313,8 @@ def play_with_dictionaries():
 
 def loop_through_collections():
     """Looping through various collections"""
-    # lists
-    names = ["Adam","Alex","Mariah","Martine","Columbus"]
+    #  lists
+    names = ["Adam", "Alex", "Mariah", "Martine", "Columbus"]
     for name in names:
         print(name)
 
@@ -360,18 +329,18 @@ def loop_through_collections():
     print("Even Numbers = ", even)
     print("Odd Numbers = ", odd)
 
-    # dictionary
+    #  dictionary
     webster = {
-        "Aardvark" : "A star of a popular children's cartoon show.",
-        "Baa" : "The sound a goat makes.",
+        "Aardvark": "A star of a popular children's cartoon show.",
+        "Baa": "The sound a goat makes.",
         "Carpet": "Goes on the floor.",
         "Dab": "A small amount."
     }
-    # Add your code below!
+    #  Add your code below!
     for key in webster:
         print(webster[key])
 
-    # Write your function below!
+    #  Write your function below!
     def fizz_count(x):
         count = 0
         for item in x:
@@ -379,22 +348,22 @@ def loop_through_collections():
                 count = count + 1
         return count
 
-    print("Occurrence of \"fizz\" = ", fizz_count(["fizz","cat","fizz"]))
+    print("Occurrence of \"fizz\" = ", fizz_count(["fizz", "cat", "fizz"]))
 
 
 def test_my_math():
-    print(custom_add("a","b"))
-    print(custom_add('a','b'))
-    print(custom_add(["a"],["b"]))
-    print(custom_add([1,2,3],[4,5,6]))
-    print(custom_add(1,2))
-    print(custom_add(1.5,2.3))
+    print(custom_add("a", "b"))
+    print(custom_add('a', 'b'))
+    print(custom_add(["a"], ["b"]))
+    print(custom_add([1, 2, 3], [4, 5, 6]))
+    print(custom_add(1, 2))
+    print(custom_add(1.5, 2.3))
 
 
 def finished_concepts():
     """Contains all the concepts that I have finished learning"""
     multi_line_comment()
-    print('count of eggs is = %d' %(count_eggs()))
+    print('count of eggs is = %d' % (count_eggs()))
     learn_variables()
     learn_math_operations()
     restaurant_bill_calculator(44.50, 6.75, 15.0, "$")
@@ -408,6 +377,6 @@ def finished_concepts():
     test_my_math()
 
 
-sayHello()
+say_hello()
 # finished_concepts()
 test_my_math()
