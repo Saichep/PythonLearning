@@ -8,7 +8,7 @@ __version__ = "1.0"
 
 def is_int(x: int):
     """returns True if a number is a true integer; False otherwise"""
-    if x - round(x) == 0: # If Difference between he number and it's rounded value is Zero, then it's a true integer
+    if x - round(x) == 0:  # If Difference between he number and it's rounded value is Zero, then it's a true integer
         return True
     else:
         return False
@@ -71,7 +71,6 @@ def smallest_number(*args):
 
 def custom_add(*args):
     """Adds/appends/concatenates the two or more objects/collections into a single one"""
-    result = 0;
     if isinstance(args[0], int):
         result = int(0)
         for item in args:
