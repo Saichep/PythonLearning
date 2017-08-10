@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 
-from datetime import datetime
-
-from math import sqrt
-
 __author__ = "Sudheer Veeravalli <veersudhir83@gmail.com>"
 __copyright__ = "Copyright (c) 2017. Sudheer Veeravalli. Free for general use and re-distribution"
 __license__ = "Public Domain"
 __version__ = "1.0"
 
+from datetime import datetime
+
+from math import sqrt
 
 def sayHello():
     print('Welcome to Python!')
@@ -120,13 +119,26 @@ def string_index(string_var: str, index: int):
         print("Index out of range: Keep it <= %s" %len(string_var))
 
 
-def play_with_strings(string_var: str):
+def play_with_strings():
     """Playing around with strings"""
+    string_var = "Hello Python !!"
     string_index(string_var, len(string_var)-2)
     print("%s in lower case= %s" %(string_var, string_var.lower()))
     print("%s in upper case= %s" %(string_var, string_var.upper()))
     print("Slice[0] of " + string_var + " is = " + string_var[0])
     print("Slice[0:<stringLength>] of " + string_var + " is = " + string_var[0:len(string_var)])
+
+
+    # Add your function here
+    def join_strings(words):
+        result = ""
+        for i in words:
+            result += i
+        return result
+    n = ["Michael", "Lieberman"]
+    print(join_strings(n))
+    # joins the strings using the delimiter
+    print("---".join(n))
 
 
 def check_string_isalpha(string_var: str):
@@ -221,6 +233,12 @@ def list_operations():
     input_list = [5, 3, 1, 2, 4]
     input_list.sort()
     print("Input List = ", input_list)
+
+    def range_operations():
+        for i in range(len(input_list)):
+            print(input_list[i])
+
+    range_operations()
     squared_list = []
     for number in input_list:
         squared_list.append(number ** 2)
@@ -237,6 +255,17 @@ def list_operations():
     print("After remove first element in list", input_list)
     del(input_list[len(input_list)-1])
     print("After del(item at last index)", input_list)
+
+    n = [[1, 2, 3], [4, 5, 6, 7, 8, 9]]
+    # Add your function here
+    def flatten(lists):
+        results = []
+        for numbers in lists:
+            for number in numbers:
+                results.append(number)
+        return results
+
+    print(flatten(n))
 
 
 def play_with_dictionaries():
@@ -307,7 +336,7 @@ def finished_concepts():
     learn_variables()
     learn_math_operations()
     restaurant_bill_calculator(44.50, 6.75, 15.0, "$")
-    play_with_strings("Hello Python!")
+    play_with_strings()
     ask_and_rephrase_about_me()
     print_date_and_time_pretty_format()
     slicing_test()
@@ -318,4 +347,4 @@ def finished_concepts():
 
 sayHello()
 # finished_concepts()
-list_operations()
+play_with_strings()
