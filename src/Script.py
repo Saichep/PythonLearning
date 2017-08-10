@@ -355,9 +355,10 @@ def test_my_math():
     print(custom_add("a", "b"))
     print(custom_add('a', 'b'))
     print(custom_add(["a"], ["b"]))
-    print(custom_add([1, 2, 3], [4, 5, 6]))
+    print(custom_add([1, 2, 3], [4, 5, 6], [4, 5, 6]))
     print(custom_add(1, 2))
     print(custom_add(1.5, 2.3))
+    print(custom_add(1.5, 2.3, 3.8))
 
 
 def finished_concepts():

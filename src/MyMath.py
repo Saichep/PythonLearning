@@ -69,26 +69,73 @@ def smallest_number(*args):
         return None
 
 
-def custom_add(*args):
-    """Adds/appends/concatenates the two or more objects/collections into a single one"""
-    if isinstance(args[0], int):
-        result = int(0)
-        for item in args:
-            result += item
-    elif isinstance(args[0], float):
-        result = float(0)
-        for item in args:
-            result += item
-    elif isinstance(args[0], str):
-        result = ""
-        for item in args:
-            result += item
-    elif isinstance(args[0], list):
-        result = []
-        for list_object in args:
-            for item in list_object:
-                result.append(item)
-    else:
-        result = None
+def validate_collections(*args):
+    """
+    Returns True if the parameters are all of the same type. Else returns False
+    :param args:
+    :return: boolean
+    """
+    valid = False
+    for index in range(1,len(args)):
+        if type(args[0]) == type(args[index]):
+            valid = True
+        else:
+            valid = False
+            break
+    return valid
 
+
+def custom_add(*args):
+    """Adds/appends/concatenates the two or more objects/collections into a single one
+    Usage:
+        custom_add("a", "b"), custom_add(["a"], ["b"])
+        custom_add([1, 2, 3], [4, 5, 6], [4, 5, 6])
+        custom_add(1, 2), custom_add(1.5, 2.3), custom_add(1.5, 2.3, 3.8)
+    """
+    result = None
+    if validate_collections(*args):
+        if isinstance(args[0], int):
+            result = int(0)
+            for item in args:
+                result += item
+        elif isinstance(args[0], float):
+            result = float(0)
+            for item in args:
+                result += item
+        elif isinstance(args[0], str):
+            result = ""
+            for item in args:
+                result += item
+        elif isinstance(args[0], list):
+            result = []
+            for list_object in args:
+                for item in list_object:
+                    result.append(item)
+        else:
+            raise Exception('Exception in custom_add: The data type of the provided arguments is not implemented')
+    else:
+        raise Exception('Exception in custom_add: The data type of the provided arguments is not the same')
     return result
+
+
+def custom_subtract(*args):
+    """Subtracts/removes/substrings the two or more objects/collections into a single one
+    Usage:
+        custom_subtract("a", "b"), custom_subtract(["a"], ["b"])
+        custom_subtract([1, 2, 3], [4, 5, 6], [4, 5, 6])
+        custom_subtract(1, 2), custom_subtract(1.5, 2.3), custom_subtract(1.5, 2.3, 3.8)
+    """
+    result = None
+    if validate_collections(*args):
+        if isinstance(args[0], int) or isinstance(args[0], float):
+            result = args[0]
+            for index in range(1,len(args)):
+                result -= args[index]
+        else:
+            raise Exception('Exception in custom_subtract: The data type of the provided arguments is not implemented')
+    else:
+        raise Exception('Exception in custom_subtract: The data type of the provided arguments is not the same')
+    return result
+
+
+print(custom_subtract(1.5, 2.5, None))
