@@ -94,14 +94,8 @@ def custom_add(*args):
     """
     result = None
     if validate_collections(*args):
-        if isinstance(args[0], int):
-            result = int(0)
-            for item in args:
-                result += item
-        elif isinstance(args[0], float):
-            result = float(0)
-            for item in args:
-                result += item
+        if isinstance(args[0], int) or isinstance(args[0], float):
+            result = sum(args)
         elif isinstance(args[0], str):
             result = ""
             for item in args:
@@ -137,5 +131,3 @@ def custom_subtract(*args):
         raise Exception('Exception in custom_subtract: The data type of the provided arguments is not the same')
     return result
 
-
-print(custom_subtract(1.5, 2.5, None))
