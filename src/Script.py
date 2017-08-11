@@ -122,7 +122,18 @@ def string_index(string_var: str, index: int):
 def play_with_strings():
     """Playing around with strings"""
     string_var = "Hello Python !!"
-    print("Reversed String = ", string_var[::-1])
+    print("Reversed String = %s" % string_var[::-1])
+
+    def string_reverse(x: str):
+        result = ""
+        index = len(x) - 1
+        while index >= 0:
+            result += x[index]
+            index -= 1
+        return result
+
+    print("Reversed String(custom)= \"%s%s" % (string_reverse(string_var), "\""))
+
     string_index(string_var, len(string_var)-8)
     print("%s in lower case= %s" % (string_var, string_var.lower()))
     print("%s in upper case= %s" % (string_var, string_var.upper()))
