@@ -22,7 +22,7 @@ def multi_line_comment():
     print('processed multi line comment')
 
 
-def learn_variables():
+def play_with_variables():
     """Learn about variables"""
     my_int = 7
     my_float = 1.23
@@ -77,7 +77,7 @@ def distance_from_zero_again(arg):
         return "Wrong arguments !!"
 
 
-def learn_math_operations():
+def play_with_math():
     """Learn about Mathematical Operations"""
     x = 10
     y = 3
@@ -122,7 +122,8 @@ def string_index(string_var: str, index: int):
 def play_with_strings():
     """Playing around with strings"""
     string_var = "Hello Python !!"
-    string_index(string_var, len(string_var)-2)
+    print("Reversed String = ", string_var[::-1])
+    string_index(string_var, len(string_var)-8)
     print("%s in lower case= %s" % (string_var, string_var.lower()))
     print("%s in upper case= %s" % (string_var, string_var.upper()))
     print("Slice[0] of " + string_var + " is = " + string_var[0])
@@ -222,7 +223,7 @@ def slicing_test():
     print(slicing_strings_lists(list_items, 4, None))
 
 
-def list_operations():
+def play_with_lists():
     input_list = [5, 3, 1, 2, 4]
     input_list.sort()
     print("Input List = ", input_list)
@@ -311,7 +312,7 @@ def play_with_dictionaries():
     print(inventory)
 
 
-def loop_through_collections():
+def play_with_collections():
     """Looping through various collections"""
     #  lists
     names = ["Adam", "Alex", "Mariah", "Martine", "Columbus"]
@@ -352,8 +353,6 @@ def loop_through_collections():
 
 
 def test_my_math():
-    print(custom_add("a", "b"))
-    print(custom_add('a', 'b'))
     print(custom_add(["a"], ["b"]))
     print(custom_add([1, 2, 3], [4, 5, 6], [4, 5, 6]))
     print(custom_add(1, 2))
@@ -365,19 +364,19 @@ def finished_concepts():
     """Contains all the concepts that I have finished learning"""
     multi_line_comment()
     print('count of eggs is = %d' % (count_eggs()))
-    learn_variables()
-    learn_math_operations()
-    restaurant_bill_calculator(44.50, 6.75, 15.0, "$")
+    play_with_variables()
     play_with_strings()
     ask_and_rephrase_about_me()
-    print_date_and_time_pretty_format()
+    play_with_math()
+    play_with_lists()
     slicing_test()
-    list_operations()
     play_with_dictionaries()
-    loop_through_collections()
+    play_with_collections()
+    print_date_and_time_pretty_format()
+    restaurant_bill_calculator(44.50, 6.75, 15.0, "$")
     test_my_math()
 
 
 say_hello()
 # finished_concepts()
-test_my_math()
+play_with_strings()

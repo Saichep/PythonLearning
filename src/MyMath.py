@@ -36,7 +36,11 @@ def is_prime(x: int):
 
 
 def factorial(x):
-    """returns factorial value for given number"""
+    """
+    Returns factorial value for given number
+    :param x:int
+    :return: Object
+    """
     if x == 1:
         return 1
     else:
@@ -44,7 +48,11 @@ def factorial(x):
 
 
 def biggest_number(*args):
-    """returns the biggest number in a given list of integers"""
+    """
+    Returns the biggest number in a given list of integers
+    :param args:list
+    :return: Object
+    """
     valid = True
     for arg in args:
         if not isinstance(arg, int):
@@ -57,7 +65,11 @@ def biggest_number(*args):
 
 
 def smallest_number(*args):
-    """returns the smallest number in a given list of integers"""
+    """
+    Returns the smallest number in a given list of integers
+    :param args: list
+    :return: Object
+    """
     valid = True
     for arg in args:
         if not isinstance(arg, int):
@@ -72,7 +84,7 @@ def smallest_number(*args):
 def validate_collections(*args):
     """
     Returns True if the parameters are all of the same type. Else returns False
-    :param args:
+    :param args: list
     :return: boolean
     """
     valid = False
@@ -86,20 +98,18 @@ def validate_collections(*args):
 
 
 def custom_add(*args):
-    """Adds/appends/concatenates the two or more objects/collections into a single one
+    """
+    Adds/appends the two or more objects/collections into a single one
+    :param args: Collection of objects
+    :return: Object
     Usage:
-        custom_add("a", "b"), custom_add(["a"], ["b"])
-        custom_add([1, 2, 3], [4, 5, 6], [4, 5, 6])
-        custom_add(1, 2), custom_add(1.5, 2.3), custom_add(1.5, 2.3, 3.8)
+        custom_add(["a"], ["b"]); custom_add([1, 2, 3], [4, 5, 6], [4, 5, 6])
+        custom_add(1, 2);  custom_add(1.5, 2.3);  custom_add(1.5, 2.3, 3.8)
     """
     result = None
     if validate_collections(*args):
         if isinstance(args[0], int) or isinstance(args[0], float):
             result = sum(args)
-        elif isinstance(args[0], str):
-            result = ""
-            for item in args:
-                result += item
         elif isinstance(args[0], list):
             result = []
             for list_object in args:
@@ -113,11 +123,13 @@ def custom_add(*args):
 
 
 def custom_subtract(*args):
-    """Subtracts/removes/substrings the two or more objects/collections into a single one
+    """
+    Subtracts/removes the two or more objects/collections into a single one
+    :param args: Collection of objects
+    :return: Object
     Usage:
-        custom_subtract("a", "b"), custom_subtract(["a"], ["b"])
-        custom_subtract([1, 2, 3], [4, 5, 6], [4, 5, 6])
-        custom_subtract(1, 2), custom_subtract(1.5, 2.3), custom_subtract(1.5, 2.3, 3.8)
+        custom_subtract(["a"], ["b"]);  custom_subtract([1, 2, 3], [4, 5, 6], [4, 5, 6])
+        custom_subtract(1, 2);  custom_subtract(1.5, 2.3);   custom_subtract(1.5, 2.3, 3.8)
     """
     result = None
     if validate_collections(*args):
