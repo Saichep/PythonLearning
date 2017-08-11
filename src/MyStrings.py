@@ -112,6 +112,6 @@ def join_with_delimiter(x: str, delimiter: str) -> str:
     :param delimiter: str
     :return: str
     """
-    if delimiter is None or delimiter in ["",'']:
+    if delimiter is None or delimiter in ["", '']:
         delimiter = " "
     return delimiter.join(x)

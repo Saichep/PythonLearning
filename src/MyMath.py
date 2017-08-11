@@ -73,7 +73,7 @@ def biggest_number(*args) -> int:
     if valid:
         return max(args)
     else:
-        return None
+        raise Exception('Exception in MyMath.biggest_number(): The data type of the arguments is not unique.')
 
 
 def smallest_number(*args) -> int:
@@ -90,7 +90,7 @@ def smallest_number(*args) -> int:
     if valid:
         return min(args)
     else:
-        return None
+        raise Exception('Exception in MyMath.smallest_number(): The data type of the arguments is not unique.')
 
 
 def distance_from_zero(arg) -> int:
@@ -102,7 +102,7 @@ def distance_from_zero(arg) -> int:
     if type(arg) == int or type(arg) == float:
         return abs(arg)
     else:
-        return None
+        raise Exception('Exception in MyMath.distance_from_zero(): The data type of the argument(s) is not supported.')
 
 
 def validate_collections(*args) -> bool:
@@ -139,9 +139,9 @@ def custom_add(*args) -> object:
                 for item in list_object:
                     result.append(item)
         else:
-            raise Exception('Exception in MyMath.custom_add: The data type of the provided arguments is not implemented')
+            raise Exception('Exception in MyMath.custom_add(): The data type of the arguments is not implemented.')
     else:
-        raise Exception('Exception in MyMath.custom_add: The data type of the provided arguments is not the same')
+        raise Exception('Exception in MyMath.custom_add(): The data type of the arguments is not the same.')
     return result
 
 
@@ -160,7 +160,7 @@ def custom_subtract(*args) -> object:
             for index in range(1, len(args)):
                 result -= args[index]
         else:
-            raise Exception('Exception in MyMath.custom_subtract: The data type of the provided arguments is not implemented')
+            raise Exception('Exception in MyMath.custom_subtract(): The data type of the arguments is not implemented.')
     else:
-        raise Exception('Exception in MyMath.custom_subtract: The data type of the provided arguments is not the same')
+        raise Exception('Exception in MyMath.custom_subtract(): The data type of the arguments is not the same.')
     return result

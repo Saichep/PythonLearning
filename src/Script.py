@@ -307,4 +307,4 @@ def finished_concepts():
 
 say_hello()
 # finished_concepts()
-slicing_test()
+print(sliced.__doc__)
