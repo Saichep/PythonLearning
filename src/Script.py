@@ -2,6 +2,7 @@
 from datetime import datetime
 from math import sqrt
 from MyMath import *
+from MyStrings import *
 
 __author__ = "Sudheer Veeravalli <veersudhir83@gmail.com>"
 __copyright__ = "Copyright (c) 2017. Sudheer Veeravalli. Free for general use and re-distribution"
@@ -39,44 +40,6 @@ def count_eggs():
     return eggs
 
 
-def biggest_number(*args):
-    valid = True
-    for arg in args:
-        if not isinstance(arg, int):
-            valid = False
-            break
-    if valid:
-        return max(args)
-    else:
-        return "Wrong arguments !!"
-
-
-def smallest_number(*args):
-    valid = True
-    for arg in args:
-        if not isinstance(arg, int):
-            valid = False
-            break
-    if valid:
-        return min(args)
-    else:
-        return "Wrong arguments !!"
-
-
-def distance_from_zero(arg):
-    if type(arg) == int or type(arg) == float:
-        return abs(arg)
-    else:
-        return "Wrong arguments !!"
-
-
-def distance_from_zero_again(arg):
-    if type(arg) == int or type(arg) == float:
-        return abs(arg)
-    else:
-        return "Wrong arguments !!"
-
-
 def play_with_math():
     """Learn about Mathematical Operations"""
     x = 10
@@ -93,7 +56,6 @@ def play_with_math():
     print("Biggest Number is =", biggest_number(-10, -5, 5, 10))
     print("Smallest Number is =", smallest_number(-10, -5, 5, 10))
     print("Distance between -10 and Zero is =", distance_from_zero(-10))
-    print("Distance between 4 and Zero again is =", distance_from_zero_again(4))
 
 
 def restaurant_bill_calculator(meal_cost: float, tax_percentage: float, tip_percentage: float, currency: str):
@@ -104,67 +66,31 @@ def restaurant_bill_calculator(meal_cost: float, tax_percentage: float, tip_perc
     print("Total (including tax and tip) = %.2f" % total, currency)
 
 
-def string_index(string_var: str, index: int):
-    """
-    The string "PYTHON" has six characters, numbered 0 to 5, as shown below:
-    +---+---+---+---+---+---+
-    | P | Y | T | H | O | N |
-    +---+---+---+---+---+---+
-      0   1   2   3   4   5
-    So if you wanted "Y", you could just type "PYTHON"[1] (always start counting from 0!)
-    """
-    if index <= len(string_var):
-        print("%d'th char of %s is %s" % (index, string_var, string_var[index]))
-    else:
-        print("Index out of range: Keep it <= %s" % len(string_var))
-
-
 def play_with_strings():
     """Playing around with strings"""
-    string_var = "Hello Python !!"
-    print("Reversed String = %s" % string_var[::-1])
+    string_var = "hello python !!"
 
-    def string_reverse(x: str):
-        result = ""
-        index = len(x) - 1
-        while index >= 0:
-            result += x[index]
-            index -= 1
-        return result
+    string_var = capitalize(string_var, None)
+    print("capitalize_string =%s" % string_var)
+    ind = 7
+    result = chart_at_index(string_var, ind)
+    print("%d'th char of %s is %s" % (len(string_var)-8, string_var, result))
 
-    print("Reversed String(custom)= \"%s%s" % (string_reverse(string_var), "\""))
+    print("\"%s\" in lower case= %s" % (string_var, string_var.lower()))
+    print("\"%s\" in upper case= %s" % (string_var, string_var.upper()))
 
-    string_index(string_var, len(string_var)-8)
-    print("%s in lower case= %s" % (string_var, string_var.lower()))
-    print("%s in upper case= %s" % (string_var, string_var.upper()))
-    print("Slice[0] of " + string_var + " is = " + string_var[0])
-    print("Slice[0:<stringLength>] of " + string_var + " is = " + string_var[0:len(string_var)])
+    print("Reversed String(inbuilt) =%s" % (reverse(string_var,None)))
+    print("Reversed String(custom) =%s" % (reverse(string_var,False)))
 
-    def join_strings(words):
-        result = ""
-        for i in words:
-            result += i
-        return result
-    n = ["Michael", "Lieberman"]
-    print(join_strings(n))
+    print("Slice[0] of \"%s\" is =%s" % (string_var, string_var[0]))
+    sliced_val = sliced("", 0, None)
+    print("Slice[0:%d] of \"%s\" is =%s" %(ind, string_var, sliced_val))
+
+    n = ["Sudheer", "Veeravalli"]
+
+    print(join_with_delimiter(n,None))
     # joins the strings using the delimiter
-    print("---".join(n))
-
-
-def check_string_isalpha(string_var: str):
-    """Checks if a string is not empty and has only alphabetic characters"""
-    if len(string_var) > 0 and string_var.isalpha():
-        return True
-    else:
-        return False
-
-
-def check_isnumeric(numeric_var: str):
-    """Checks if a string is not empty and has only numbers"""
-    if len(numeric_var) > 0 and numeric_var.isnumeric():
-        return True
-    else:
-        return False
+    print(join_with_delimiter(n, "---"))
 
 
 def ask_and_rephrase_about_me():
@@ -174,8 +100,8 @@ def ask_and_rephrase_about_me():
     color = input("What is your favorite color? ")
     age = input("Your age? ")
 
-    if check_string_isalpha(name) and check_string_isalpha(quest) and check_string_isalpha(color) \
-            and check_isnumeric(age):
+    if isalphanumeric(name) and isalphanumeric(quest) and isalphanumeric(color) \
+            and isnumeric(age):
         print("Ah, so your name is %s, your quest is %s, your favorite color is %s and your age is %s."
               % (name, quest, color, age))
     else:

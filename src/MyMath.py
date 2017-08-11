@@ -7,7 +7,11 @@ __version__ = "1.0"
 
 
 def is_int(x: int):
-    """returns True if a number is a true integer; False otherwise"""
+    """
+    Returns True if a number is a true integer; False otherwise
+    :param x: int
+    :return: boolean
+    """
     if x - round(x) == 0:  # If Difference between he number and it's rounded value is Zero, then it's a true integer
         return True
     else:
@@ -15,7 +19,11 @@ def is_int(x: int):
 
 
 def sum_of_digits(x: int):
-    """returns the sum of all numbers in a given integer; if less than zero, it will return zero"""
+    """
+    Returns the sum of all numbers in a given integer; if less than zero, it will return zero
+    :param x: int
+    :return: int
+    """
     result = 0
     if x >= 0:
         for digit in str(x):
@@ -24,7 +32,11 @@ def sum_of_digits(x: int):
 
 
 def is_prime(x: int):
-    """returns True if the given number is prime number; False otherwise"""
+    """
+    Returns True if the given number is prime number; False otherwise
+    :param x: int
+    :return: boolean
+    """
     result = True
     if x <= 1:
         result = False
@@ -35,11 +47,11 @@ def is_prime(x: int):
     return result
 
 
-def factorial(x):
+def factorial(x: int):
     """
     Returns factorial value for given number
-    :param x:int
-    :return: Object
+    :param x: int
+    :return: int
     """
     if x == 1:
         return 1
@@ -50,8 +62,8 @@ def factorial(x):
 def biggest_number(*args):
     """
     Returns the biggest number in a given list of integers
-    :param args:list
-    :return: Object
+    :param args: list
+    :return: int
     """
     valid = True
     for arg in args:
@@ -81,6 +93,18 @@ def smallest_number(*args):
         return None
 
 
+def distance_from_zero(arg):
+    """
+    Returns the distance from Zero
+    :param arg: Object
+    :return: int Object
+    """
+    if type(arg) == int or type(arg) == float:
+        return abs(arg)
+    else:
+        return None
+
+
 def validate_collections(*args):
     """
     Returns True if the parameters are all of the same type. Else returns False
@@ -88,8 +112,8 @@ def validate_collections(*args):
     :return: boolean
     """
     valid = False
-    for index in range(1,len(args)):
-        if type(args[0]) == type(args[index]):
+    for index in range(1, len(args)):
+        if isinstance(args[index], type(args[0])):
             valid = True
         else:
             valid = False
@@ -106,7 +130,6 @@ def custom_add(*args):
         custom_add(["a"], ["b"]); custom_add([1, 2, 3], [4, 5, 6], [4, 5, 6])
         custom_add(1, 2);  custom_add(1.5, 2.3);  custom_add(1.5, 2.3, 3.8)
     """
-    result = None
     if validate_collections(*args):
         if isinstance(args[0], int) or isinstance(args[0], float):
             result = sum(args)
@@ -116,9 +139,9 @@ def custom_add(*args):
                 for item in list_object:
                     result.append(item)
         else:
-            raise Exception('Exception in custom_add: The data type of the provided arguments is not implemented')
+            raise Exception('Exception in MyMath.custom_add: The data type of the provided arguments is not implemented')
     else:
-        raise Exception('Exception in custom_add: The data type of the provided arguments is not the same')
+        raise Exception('Exception in MyMath.custom_add: The data type of the provided arguments is not the same')
     return result
 
 
@@ -131,15 +154,13 @@ def custom_subtract(*args):
         custom_subtract(["a"], ["b"]);  custom_subtract([1, 2, 3], [4, 5, 6], [4, 5, 6])
         custom_subtract(1, 2);  custom_subtract(1.5, 2.3);   custom_subtract(1.5, 2.3, 3.8)
     """
-    result = None
     if validate_collections(*args):
         if isinstance(args[0], int) or isinstance(args[0], float):
             result = args[0]
-            for index in range(1,len(args)):
+            for index in range(1, len(args)):
                 result -= args[index]
         else:
-            raise Exception('Exception in custom_subtract: The data type of the provided arguments is not implemented')
+            raise Exception('Exception in MyMath.custom_subtract: The data type of the provided arguments is not implemented')
     else:
-        raise Exception('Exception in custom_subtract: The data type of the provided arguments is not the same')
+        raise Exception('Exception in MyMath.custom_subtract: The data type of the provided arguments is not the same')
     return result
-
