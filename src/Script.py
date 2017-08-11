@@ -139,25 +139,16 @@ def arithmetic_and_logical_operators():
     print(greater_less_equal(6, 5))
 
 
-def slicing_strings_lists(input_object, start_index: int, end_index: int):
-    """Slices a given string or list"""
-    if start_index is None:
-        start_index = 0
-    if end_index is None:
-        end_index = len(input_object)
-    return input_object[start_index:end_index]
-
-
 def slicing_test():
     string_test = "catdogfrog"
-    print("dog=", slicing_strings_lists(string_test, 3, 6))
-    print("cat=", slicing_strings_lists(string_test, None , 3))
-    print("frog=", slicing_strings_lists(string_test, 6, None))
+    print("dog=", sliced(string_test, 3, 6))
+    print("cat=", sliced(string_test, None , 3))
+    print("frog=", sliced(string_test, 6, None))
 
     list_items = ["sunglasses", "hat", "passport", "laptop", "suit", "shoes"]
-    print(slicing_strings_lists(list_items, 3, 6))
-    print(slicing_strings_lists(list_items, None , 3))
-    print(slicing_strings_lists(list_items, 4, None))
+    print(sliced(list_items, 3, 6))
+    print(sliced(list_items, None , 3))
+    print(sliced(list_items, 4, None))
 
 
 def play_with_lists():
@@ -316,4 +307,4 @@ def finished_concepts():
 
 say_hello()
 # finished_concepts()
-play_with_strings()
+slicing_test()
