@@ -6,7 +6,7 @@ __license__ = "Public Domain"
 __version__ = "1.0"
 
 
-def isalphanumeric(x: str) -> bool:
+def is_alpha_numeric(x: str) -> bool:
     """
     Checks if a string is not empty and has only alphabetic characters
     :param x: str
@@ -18,7 +18,7 @@ def isalphanumeric(x: str) -> bool:
         return False
 
 
-def isnumeric(x: str) -> bool:
+def is_numeric(x: str) -> bool:
     """
     Checks if a string is not empty and has only numbers
     :param x: str

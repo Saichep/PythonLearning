@@ -100,8 +100,8 @@ def ask_and_rephrase_about_me():
     color = input("What is your favorite color? ")
     age = input("Your age? ")
 
-    if isalphanumeric(name) and isalphanumeric(quest) and isalphanumeric(color) \
-            and isnumeric(age):
+    if is_alpha_numeric(name) and is_alpha_numeric(quest) and is_alpha_numeric(color) \
+            and is_numeric(age):
         print("Ah, so your name is %s, your quest is %s, your favorite color is %s and your age is %s."
               % (name, quest, color, age))
     else:
