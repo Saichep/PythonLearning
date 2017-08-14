@@ -309,23 +309,19 @@ def test_json():
                 'price': 242.23
             }
         }
+
     put(json_data, filename)
-
     json_data_get = get(filename)
-
+    print(json_data_get)
     try:
         if json_data_get["ACME"]["price"]:
-            json_data_get["ACME"]["price"] = 642.23
-        put(json_data_get, filename)
+            json_data_get["ACME"]["price"] = 1642.23
+            print(json_data_get)
+            put(json_data_get, filename)
         return 0
     except:
         raise Exception("Can't write data. Verify and re-submit")
 
-    # for key in json_data_get:
-    #     print("Key=", key)
-    #     print("Value=")
-    #     for data_element in json_data_get[key]:
-    #         print(data_element, ":", json_data_get[key][data_element])
 
 
 
