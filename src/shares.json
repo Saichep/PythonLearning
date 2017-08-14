@@ -1,0 +1,12 @@
+{
+    "ACME": {
+        "name": "ACME",
+        "price": 542.23,
+        "shares": 100
+    },
+    "LAKME": {
+        "name": "LAKME",
+        "price": 242.23,
+        "shares": 200
+    }
+}

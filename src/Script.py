@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 from datetime import datetime
 from math import sqrt
-from MyMath import *
+import os
+
 from MyStrings import *
+from MyMath import *
+from jsonio import *
 
 __author__ = "Sudheer Veeravalli <veersudhir83@gmail.com>"
 __copyright__ = "Copyright (c) 2017. Sudheer Veeravalli. Free for general use and re-distribution"
@@ -288,6 +291,34 @@ def test_my_math():
     print(custom_add(1.5, 2.3, 3.8))
 
 
+def test_json():
+    print("in test_json() method")
+    json_data = {
+        'ACME': {
+                'name': 'ACME',
+                'shares': 100,
+                'price': 542.23
+            },
+        'LAKME': {
+                'name': 'LAKME',
+                'shares': 200,
+                'price': 242.23
+            }
+        }
+
+    put(json_data, "./shares.json")
+
+    print("Done with data write")
+
+    dir = os.path.dirname(os.path.realpath(__file__))
+
+    print(dir)
+    filename = os.path.join(dir, "shares.json")
+    json_data_get = get(filename)
+    print("Json Data from file=")
+    print(json_data_get)
+
+
 def finished_concepts():
     """Contains all the concepts that I have finished learning"""
     multi_line_comment()
@@ -303,8 +334,9 @@ def finished_concepts():
     print_date_and_time_pretty_format()
     restaurant_bill_calculator(44.50, 6.75, 15.0, "$")
     test_my_math()
+    print(sliced.__doc__)
 
 
 say_hello()
 # finished_concepts()
-print(sliced.__doc__)
+test_json()
