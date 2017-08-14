@@ -292,6 +292,10 @@ def test_my_math():
 
 
 def test_json():
+    current_dir = os.path.dirname(os.path.realpath(__file__))
+    filename = os.path.join(current_dir, "shares.json")
+    print(current_dir)
+
     print("in test_json() method")
     json_data = {
         'ACME': {
@@ -305,18 +309,24 @@ def test_json():
                 'price': 242.23
             }
         }
+    put(json_data, filename)
 
-    put(json_data, "./shares.json")
-
-    print("Done with data write")
-
-    dir = os.path.dirname(os.path.realpath(__file__))
-
-    print(dir)
-    filename = os.path.join(dir, "shares.json")
     json_data_get = get(filename)
-    print("Json Data from file=")
-    print(json_data_get)
+
+    try:
+        if json_data_get["ACME"]["price"]:
+            json_data_get["ACME"]["price"] = 642.23
+        put(json_data_get, filename)
+        return 0
+    except:
+        raise Exception("Can't write data. Verify and re-submit")
+
+    # for key in json_data_get:
+    #     print("Key=", key)
+    #     print("Value=")
+    #     for data_element in json_data_get[key]:
+    #         print(data_element, ":", json_data_get[key][data_element])
+
 
 
 def finished_concepts():
