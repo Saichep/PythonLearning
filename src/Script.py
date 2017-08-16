@@ -343,5 +343,4 @@ def finished_concepts():
 
 say_hello()
 # finished_concepts()
-txt = "a bcde"
-print(censor_text(txt, "bcde"))
+print(censor_text("hey hey hey","hey"))

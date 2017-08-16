@@ -131,6 +131,8 @@ def censor_text(x: str, censor_string: str) -> str:
         replace_string += "*"
     words = x.split()
     for word in words:
+        if len(result) > 0:
+            result += " "
         if word == censor_string:
             result += " " + replace_string
         else:
@@ -169,3 +171,17 @@ def join_with_delimiter(x: str, delimiter: str) -> str:
     if delimiter is None or delimiter in ["", '']:
         delimiter = " "
     return delimiter.join(x)
+
+
+def count_occurrences(x: list, num: int)-> int:
+    """
+    Returns the count of occurrences of num in list
+    :param x: list
+    :param num: int
+    :return: int
+    """
+    result = 0
+    for i in x:
+        if i == num:
+            result += 1
+    return result
