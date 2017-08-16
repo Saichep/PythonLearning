@@ -202,6 +202,6 @@ def median(x: list) -> int:
     x.sort()
     middle = int(len(x) / 2)
     if len(x) % 2 == 0:
-        return (x[middle-1] + x[middle]) / 2
+        return (x[middle-1] + x[middle]) / 2.0
     else:
         return x[middle]

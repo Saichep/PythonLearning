@@ -345,4 +345,4 @@ def finished_concepts():
 say_hello()
 # finished_concepts()
 
-print(median([1, 2, 3]))
+print(median([4, 5, 5, 4]))
