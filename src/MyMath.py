@@ -197,7 +197,7 @@ def median(x: list) -> int:
     """
     Returns the list removing the duplicates
     :param x: list
-    :return: list
+    :return: int
     """
     x.sort()
     middle = int(len(x) / 2)
