@@ -171,5 +171,3 @@ def join_with_delimiter(x: str, delimiter: str) -> str:
     if delimiter is None or delimiter in ["", '']:
         delimiter = " "
     return delimiter.join(x)
-
-
