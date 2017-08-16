@@ -31,6 +31,3 @@ def variance_grades(scores):
 
 def std_deviation_grades(variance):
     return variance ** 0.5
-
-
-print(std_deviation_grades(variance_grades(grades)))
