@@ -164,3 +164,17 @@ def custom_subtract(*args) -> object:
     else:
         raise Exception('Exception in MyMath.custom_subtract(): The data type of the arguments is not the same.')
     return result
+
+
+def count_occurrences(x: list, num: int)-> int:
+    """
+    Returns the count of occurrences of num in list
+    :param x: list
+    :param num: int
+    :return: int
+    """
+    result = 0
+    for i in x:
+        if i == num:
+            result += 1
+    return result

@@ -173,15 +173,3 @@ def join_with_delimiter(x: str, delimiter: str) -> str:
     return delimiter.join(x)
 
 
-def count_occurrences(x: list, num: int)-> int:
-    """
-    Returns the count of occurrences of num in list
-    :param x: list
-    :param num: int
-    :return: int
-    """
-    result = 0
-    for i in x:
-        if i == num:
-            result += 1
-    return result
