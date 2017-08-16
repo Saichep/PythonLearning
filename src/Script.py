@@ -339,8 +339,10 @@ def finished_concepts():
     restaurant_bill_calculator(44.50, 6.75, 15.0, "$")
     test_my_math()
     print(sliced.__doc__)
+    print(remove_duplicates(["hey", "buddy", "hey"]))
 
 
 say_hello()
 # finished_concepts()
-print(censor_text("hey hey hey","hey"))
+
+print(median([1, 2, 3]))

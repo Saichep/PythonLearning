@@ -166,7 +166,7 @@ def custom_subtract(*args) -> object:
     return result
 
 
-def count_occurrences(x: list, num: int)-> int:
+def count_occurrences(x: list, num: int) -> int:
     """
     Returns the count of occurrences of num in list
     :param x: list
@@ -178,3 +178,30 @@ def count_occurrences(x: list, num: int)-> int:
         if i == num:
             result += 1
     return result
+
+
+def remove_duplicates(x: list) -> list:
+    """
+    Returns the list removing the duplicates
+    :param x: list
+    :return: list
+    """
+    result = []
+    for num in x:
+        if not result.__contains__(num):
+            result.append(num)
+    return result
+
+
+def median(x: list) -> int:
+    """
+    Returns the list removing the duplicates
+    :param x: list
+    :return: list
+    """
+    x.sort()
+    middle = int(len(x) / 2)
+    if len(x) % 2 == 0:
+        return (x[middle-1] + x[middle]) / 2
+    else:
+        return x[middle]
