@@ -84,6 +84,60 @@ def reverse(x: str, use_inbuilt: bool) -> str:
     return result
 
 
+def anti_vowel(x: str) -> str:
+    """
+    Returns the same string but with vowels (a,e,i,o,u) removed.
+    :param x: str
+    :return: str
+    """
+    result = ""
+    for char in x:
+        if str(char).lower() not in ['a', 'e', 'i', 'o', 'u']:
+            result += str(char)
+    return result
+
+
+def scrabble_score(x: str) -> int:
+    """
+    Scrabble is a game where players get points by spelling words.
+    Words are scored by adding together the point values of each individual letter; ignore the case of characters
+    :param x: str
+    :return: int
+    """
+    score = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2,
+             "f": 4, "i": 1, "h": 4, "k": 5, "j": 8, "m": 3,
+             "l": 1, "o": 1, "n": 1, "q": 10, "p": 3, "s": 1,
+             "r": 1, "u": 1, "t": 1, "w": 4, "v": 4, "y": 4,
+             "x": 8, "z": 10}
+    result = 0
+    for char in x:
+        if str(char).lower() in score.keys():
+            result += score[str(char).lower()]
+        else:
+            result += 0
+    return result
+
+
+def censor_text(x: str, censor_string: str) -> str:
+    """
+    This function returns the given text back but censor's the word with asterisk.
+    :param x: str
+    :param censor_string: str
+    :return: str
+    """
+    result = ""
+    replace_string = ""
+    for i in range(0,len(censor_string)):
+        replace_string += "*"
+    words = x.split()
+    for word in words:
+        if word == censor_string:
+            result += " " + replace_string
+        else:
+            result += " " + word
+    return result
+
+
 def sliced(x: str, start_index: int, end_index: int) -> str:
     """
     Returns the sliced portion of given string.

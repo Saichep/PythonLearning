@@ -323,8 +323,6 @@ def test_json():
         raise Exception("Can't write data. Verify and re-submit")
 
 
-
-
 def finished_concepts():
     """Contains all the concepts that I have finished learning"""
     multi_line_comment()
@@ -345,4 +343,5 @@ def finished_concepts():
 
 say_hello()
 # finished_concepts()
-test_json()
+txt = "a bcde"
+print(censor_text(txt, "bcde"))
