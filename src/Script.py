@@ -82,8 +82,8 @@ def play_with_strings():
     print("\"%s\" in lower case= %s" % (string_var, string_var.lower()))
     print("\"%s\" in upper case= %s" % (string_var, string_var.upper()))
 
-    print("Reversed String(inbuilt) =%s" % (reverse(string_var,None)))
-    print("Reversed String(custom) =%s" % (reverse(string_var,False)))
+    print("Reversed String(inbuilt) =%s" % (reverse(string_var, None)))
+    print("Reversed String(custom) =%s" % (reverse(string_var, False)))
 
     print("Slice[0] of \"%s\" is =%s" % (string_var, string_var[0]))
     sliced_val = sliced("", 0, None)
@@ -91,7 +91,7 @@ def play_with_strings():
 
     n = ["Sudheer", "Veeravalli"]
 
-    print(join_with_delimiter(n,None))
+    print(join_with_delimiter(n, None))
     # joins the strings using the delimiter
     print(join_with_delimiter(n, "---"))
 
