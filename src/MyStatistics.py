@@ -25,7 +25,7 @@ def variance_grades(scores):
     average = average_grades(scores)
     variance = 0
     for score in scores:
-        variance += ( average - score ) ** 2
+        variance += (average - score) ** 2
     return variance / float(len(scores))
 
 
