@@ -323,6 +323,21 @@ def test_json():
         raise Exception("Can't write data. Verify and re-submit")
 
 
+def play_with_lambdas():
+    languages = ["HTML", "JavaScript", "Python", "Ruby"]
+    print(filter(lambda x: x == "Python", languages))
+
+    cubes = [x ** 3 for x in range(1, 11)]
+    print(filter(lambda x: x % 3 == 0, cubes))
+
+    garbled = "!XeXgXaXsXsXeXmX XtXeXrXcXeXsX XeXhXtX XmXaX XI"
+    print(garbled[::-1][::2])
+
+    garbled = "IXXX aXXmX aXXXnXoXXXXXtXhXeXXXXrX sXXXXeXcXXXrXeXt mXXeXsXXXsXaXXXXXXgXeX!XX"
+    print(filter(lambda x: x != "X", garbled))
+
+
+
 def finished_concepts():
     """Contains all the concepts that I have finished learning"""
     multi_line_comment()
@@ -340,9 +355,10 @@ def finished_concepts():
     test_my_math()
     print(sliced.__doc__)
     print(remove_duplicates(["hey", "buddy", "hey"]))
+    print(median([4, 5, 5, 4]))
 
 
 say_hello()
 # finished_concepts()
+play_with_lambdas()
 
-print(median([4, 5, 5, 4]))
