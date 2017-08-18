@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 from datetime import datetime
 from math import sqrt
 import os
@@ -337,7 +338,6 @@ def play_with_lambdas():
     print(filter(lambda x: x != "X", garbled))
 
 
-
 def finished_concepts():
     """Contains all the concepts that I have finished learning"""
     multi_line_comment()
@@ -356,9 +356,15 @@ def finished_concepts():
     print(sliced.__doc__)
     print(remove_duplicates(["hey", "buddy", "hey"]))
     print(median([4, 5, 5, 4]))
+    play_with_lambdas()
 
 
 say_hello()
 # finished_concepts()
-play_with_lambdas()
-
+input = 12
+n = 0
+mask = n << 2
+result = input ^ n
+result2 = input ^ mask
+print(bin(result))
+print(bin(result2))
