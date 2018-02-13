@@ -361,10 +361,10 @@ def finished_concepts():
 
 say_hello()
 # finished_concepts()
-input = 12
+inp = 12
 n = 0
 mask = n << 2
-result = input ^ n
-result2 = input ^ mask
+result = inp ^ n
+result2 = inp ^ mask
 print(bin(result))
 print(bin(result2))
