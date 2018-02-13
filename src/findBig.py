@@ -2,7 +2,7 @@ def findBigSimple():
     num1 = float(input('Enter First Number:'))
     num2 = float(input('Enter Second Number:'))
     if num1 > num2:
-        print(num1)    
+        print(num1)
     else:
         print(num2)
 
@@ -15,10 +15,10 @@ def findBigSimpleUsingTernary():
 def readAsList():
     inp = input('Enter all numbers (delimited with spaces: ')
     nums = inp.split(" ")
-    list = []
+    retList = []
     for s in nums:
-        list.append(int(s))
-    return(list)
+        retList.append(int(s))
+    return(retList)
 
 def findBigUsingList():
     lst = readAsList()
