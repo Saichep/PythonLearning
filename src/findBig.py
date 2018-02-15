@@ -2,7 +2,7 @@ def findBigSimple():
     num1 = float(input('Enter First Number:'))
     num2 = float(input('Enter Second Number:'))
     if num1 > num2:
-        print(num1)
+        print(num1)    
     else:
         print(num2)
 
@@ -11,27 +11,27 @@ def findBigSimpleUsingTernary():
     num2 = float(input('Enter Second Number:'))
     print( num1 if ( num1 > num2 ) else num2 )
 
-
-def readAsList():
-    inp = input('Enter all numbers (delimited with spaces: ')
+def __readAsList__():
+    inp = input('Enter all numbers (delimited with single space): ')
     nums = inp.split(" ")
-    retList = []
+    lst = []
     for s in nums:
-        retList.append(int(s))
-    return(retList)
+        lst.append(int(s))
+    return(lst)
 
 def findBigUsingList():
-    lst = readAsList()
+    lst = __readAsList__()
+    print(("length of {0} = {1}".format("lst", lst.__len__())).capitalize())
     temp = -1
     for num in lst:
         if num >= temp:
             temp = num
-    print("biggest number is {0}".format(temp))
+    print(("biggest number in {0} is {1}".format(lst, temp)).capitalize())
 
 def findBigUsingListBuiltIn():
-    lst = readAsList()
+    lst = __readAsList__()
     lst.sort(reverse=True)
-    print("biggest number is {0}".format(list[0]))
+    print(("biggest number in {0} is {1}".format(lst, lst[0])).capitalize())
 
-findBigSimple()
-
+#findBigSimpleUsingTernary()
+findBigUsingList()
